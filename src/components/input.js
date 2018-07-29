@@ -1,14 +1,12 @@
 import React from 'react';
 
-class Input extends Component {
-    render() {
-        return (
-            <div className="input">
-                <input />
-                <label>Title</label>
-            </div>
-        )
-    }
+const Input = ({title, state, name}, onChange) => {
+    return (
+        <div key={name} className="input">
+            <input name={name} value={state} onChange={onChange}/>
+            <label>{title}</label>
+        </div>
+    )
 }
 
 export default Input;
