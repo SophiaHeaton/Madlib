@@ -29,6 +29,10 @@ class Card extends Component {
         this.handleInputChange = this.handleInputChange.bind(this)
     }
 
+    handleInputChange(event) {
+        this.setState({ [event.target.name]: event.target.value })
+    }
+
     render() {
 
         const inputData = [
@@ -53,14 +57,12 @@ class Card extends Component {
             {title: 'Adjective', state: this.state.adjectiveFive, name: 'adjectiveFive'}
         ] 
 
-        return (
+        return(
             <div className="card">
                 {
-                    // inputData.map(data => Input(data.title, data.state, this.handleInputChange, data.name))
+                    // inputData.map(data => Input( (data), this.handleInputChange ))
                 }
-                {
-                    // inputData.map(data => Input( (data), this.handleInputChange )
-                }
+                <Content data={this.state}/>
             </div>
         )
     }
